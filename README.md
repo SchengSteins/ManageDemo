@@ -22,3 +22,7 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 未来可能增加的页面
+管理用户的其它操作界面；
+普通用户的商品界面；
