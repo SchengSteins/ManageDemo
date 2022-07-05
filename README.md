@@ -1,4 +1,8 @@
-# manage
+# OCRManage
+
+## Introduction
+
+This is a personal **vue.js** + **node.js** experimental project, published as a development version, has not been deployed
 
 ## Project setup
 ```
@@ -11,18 +15,26 @@ yarn serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 yarn build
 ```
 
 ### Lints and fixes files
+
 ```
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Localhost Server for development
 
-### 未来可能增加的页面
-管理用户的其它操作界面；
-普通用户的商品界面；
+```
+nodemon ./server/serve.js
+```
+
+## Future
+
+Public interface currently used. In the future, OCR API will be deployed on its own server
+
+More pages and functions
+
