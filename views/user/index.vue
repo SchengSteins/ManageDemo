@@ -8,7 +8,6 @@
       <common-form
         :formLabel="operateFormLabel"
         :form="operateForm"
-        :inline="true"
         ref="form"
       ></common-form>
       <div slot="footer" class="dialog-footer">
@@ -171,7 +170,7 @@ export default {
     editUser(row) {
       this.isShow = true;
       this.operateType = "edit";
-      this.operateForm = row;
+      this.operateForm = {...row};
     },
     delUser(row) {
       this.$confirm("此操作将永久删除该数据，是否继续？", "提示", {
@@ -180,27 +179,25 @@ export default {
         type: "warning",
       }).then(() => {
         const id = row.id;
-        this.$http
-          .post("user/del", {id},)
-          .then(({ data }) => {
-            if (data.code === 20000) {
-              this.$message({
-                type: "success",
-                message: "删除成功",
-              });
-              this.getList();
-            }else{
-              this.$message({
-                type: "error",
-                message: "删除失败",
-              });
-            }
-          });
+        this.$http.post("user/del", { id }).then(({ data }) => {
+          if (data.code === 20000) {
+            this.$message({
+              type: "success",
+              message: "删除成功",
+            });
+            this.getList();
+          } else {
+            this.$message({
+              type: "error",
+              message: "删除失败",
+            });
+          }
+        });
       });
     },
     getList(name) {
       this.config.loading = true;
-      name ? (this.config.page = 1) : '';
+      name ? (this.config.page = 1) : "";
       getUser({
         name,
         page: this.config.page,

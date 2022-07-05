@@ -2,7 +2,7 @@ import axios from "./axios";
 
 export const getMenu = (param) => {
     return axios.request({
-        url: '/permission/getMenu',
+        url: '/user/login',
         method: 'post',
         data: param
     })
@@ -17,7 +17,23 @@ export const getData = () => {
 export const getUser = (params) => {
     return axios.request({
         url: '/user/getUser',
-        methods: 'get',
+        method: 'get',
         params
+    })
+}
+
+export const getReg = (params) => {
+    return axios.request({
+        url: '/user/regist',
+        method: 'post',
+        data: params
+    })
+}
+
+export const getAuth = (params) => {
+    return axios.request({
+        url: '/user/auth',
+        method: 'post',
+        data: params
     })
 }

@@ -14,19 +14,6 @@ Vue.use(Element)
 
 Vue.prototype.$http = http
 
-//导航守卫
-router.beforeEach((to, from, next) => {
-  store.commit('getToken')
-  const token = store.state.user.token
-  if (!token && to.name !== 'login') {
-    next({ name: 'login' })
-  } else if (token && to.name === 'login') {
-    next({ name: 'home' })
-  } else {
-    next()
-  }
-})
-
 new Vue({
   store,
   router,

@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="form" label-width="100px" :model="form" :inline="inline">
+  <el-form ref="form" label-width="100px" :model="form" :inline="true">
     <el-form-item
       v-for="item in formLabel"
       :key="item.label"
@@ -45,10 +45,6 @@ export default {
   props: {
     formLabel: Array,
     form: Object,
-    inline: Boolean,
-  },
-  data() {
-    return {};
   },
 };
 </script>

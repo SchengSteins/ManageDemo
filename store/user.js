@@ -12,7 +12,7 @@ export default {
             state.token = ''
             Cookies.remove('token')
         },
-        getToken(state){
+        getToken(state) {
             state.token = state.token || Cookies.get('token')
         }
     }

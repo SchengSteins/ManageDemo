@@ -8,7 +8,12 @@
         size="mini"
       ></el-button>
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item v-for="item in tags" :key="item.path" :to="{ path: item.path}">{{item.label}}</el-breadcrumb-item>
+        <el-breadcrumb-item
+          v-for="item in tags"
+          :key="item.path"
+          :to="{ path: item.path }"
+          >{{ item.label }}</el-breadcrumb-item
+        >
       </el-breadcrumb>
     </div>
     <div class="r-content">
@@ -26,7 +31,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
   name: "CommonHeader",
   data() {
@@ -39,16 +44,16 @@ export default {
       this.$store.commit("collapseMenu");
     },
     logOut() {
-      this.$store.commit('clearToken')
-      this.$store.commit('clearMenu')
-      this.$router.push("/login")
-    }
+      this.$store.commit("clearToken");
+      this.$store.commit("clearMenu");
+      this.$router.push("/login");
+    },
   },
   computed: {
-      ...mapState({
-          tags: state => state.tab.tabsList
-      })
-  }
+    ...mapState({
+      tags: (state) => state.tab.tabsList,
+    }),
+  },
 };
 </script>
 
@@ -58,6 +63,10 @@ header {
   height: 100%;
   justify-content: space-between;
   align-items: center;
+}
+.el-breadcrumb /deep/ .el-breadcrumb__inner {
+  font-size: small;
+  color: white ; 
 }
 .l-content {
   display: flex;

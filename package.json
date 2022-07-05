@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "baidu-aip-sdk": "^4.16.6",
     "core-js": "^3.8.3",
     "echarts": "^5.1.2",
     "element-ui": "^2.15.8",
@@ -16,6 +17,7 @@
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "mockjs": "^1.1.0",
+    "stream": "0.0.2",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3"
   },
@@ -48,5 +50,18 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "## Project setup ``` yarn install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SchengSteins/ManageDemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SchengSteins/ManageDemo/issues"
+  },
+  "homepage": "https://github.com/SchengSteins/ManageDemo#readme"
 }
