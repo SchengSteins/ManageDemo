@@ -24,13 +24,18 @@ const routes = [
         component: () => import('../views/regist/index')
     }
 ]
+const originalPush = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
 
 const router = new VueRouter({
     mode: 'history',
     routes
 })
 
-// 导航守卫
+// 导航守卫（全局路由守卫）
 router.beforeEach((to, from, next) => {
     store.commit('getToken')
     const token = store.state.user.token

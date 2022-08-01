@@ -8,7 +8,7 @@ const config = require('../config')
 const Mock = require('mockjs')
 
 exports.login = (req, res) => {
-    const { username, password } = req.fields
+    const { username, password } = req.body
     // 先判断用户是否存在
     // 判断账号和密码是否对应
     const sql = `select * from env_users where username=?`
@@ -85,7 +85,7 @@ exports.login = (req, res) => {
 }
 
 exports.regist = (req, res) => {
-    let { username, email, password } = req.fields
+    let { username, email, password } = req.body
     //查询sql验证
     const sqlStr = 'select * from env_users where username=?'
     db.query(sqlStr, username, (err, results) => {
@@ -111,7 +111,7 @@ exports.regist = (req, res) => {
 }
 
 exports.auth = (req, res) => {
-    let {token} = req.fields
+    let { token } = req.body
     console.log(token);
     // 校验token(错误会抛出异常)
     try {

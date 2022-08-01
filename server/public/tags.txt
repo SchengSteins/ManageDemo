@@ -1,0 +1,2 @@
+ocrtest - 副本 (3).jpg  [{"transcription":"研究生","points":[[247,11],[463,11],[463,43],[247,43]],"difficult":false},{"transcription":"33333","points":[[224,110],[577,110],[577,208],[224,208]],"difficult":false}]
+ocrtest - 副本 (4).jpg  [{"transcription":"阿姨那就是2","points":[[243,1],[585,1],[585,173],[243,173]],"difficult":false}]

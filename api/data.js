@@ -37,3 +37,35 @@ export const getAuth = (params) => {
         data: params
     })
 }
+
+export const uploads = (params) => {
+    return axios.request({
+        url: '/ocr/uploads',
+        method: "post",
+        data: params,
+    })
+}
+
+export const uploadTags = (params) => {
+    return axios.request({
+        url: '/ocr/uploadTags',
+        method: "post",
+        data: params,
+    })
+}
+
+export const deloads = (params) => {
+    return axios.request({
+        url: '/ocr/deloads',
+        method: "get",
+        params: {
+            filename: params
+        }
+    })
+}
+
+export const getImg = () => {
+    return axios.request({
+        url: '/ocr/getImg',
+    })
+}

@@ -32,7 +32,7 @@
     <el-form-item class="login_submit">
       <el-button type="primary" @click="login">登录</el-button>
     </el-form-item>
-    <router-link to="/regist" style="font-size: 12px;color: red;"
+    <router-link to="/regist" style="font-size: 12px; color: red"
       >还没有账号？立即注册</router-link
     >
   </el-form>

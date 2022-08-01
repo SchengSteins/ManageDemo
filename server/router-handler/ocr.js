@@ -12,7 +12,7 @@ var client = new AipOcrClient(APP_ID, API_KEY, SECRET_KEY);
 
 exports.ocrRec = (req, res) => {
     try {
-        let path = req.files.file.path
+        let path = './public/uploads/' + req.body.file
         var image = fs.readFileSync(path).toString("base64");
         fs.unlink(path, (err) => {
             if (err) throw err;
@@ -24,6 +24,47 @@ exports.ocrRec = (req, res) => {
             throw err
         })
     } catch (error) {
-        res.send(err)
+        res.send(error)
     }
+}
+
+exports.uploads = (req, res) => {
+    res.send(req.body.fileList)
+}
+
+exports.uploadTags = (req, res) => {
+    let tags = req.body;
+    console.log(tags);
+    let content = ''
+    tags.forEach((tag) => {
+        content += tag.filename + "  " + JSON.stringify(tag.info) + '\n'
+    })
+    fs.writeFile('./public/tags.txt', content, err => {
+        if (err) {
+            console.error(err)
+            return
+        }
+        //文件写入成功。
+        res.send('文件写入成功')
+    })
+}
+
+exports.deloads = (req, res) => {
+    try {
+        let path = './public/uploads/' + req.query.filename
+        fs.unlink(path, (err) => {
+            if (err) res.send(err);
+        })
+        res.send('ok')
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+exports.getImg = (req, res) => {
+    const dir = './public/uploads/'
+    const files = fs.readdirSync(dir)
+    res.send(files.map((file) => {
+        return 'http://127.0.0.1:3006/static/' + file
+    }))
 }

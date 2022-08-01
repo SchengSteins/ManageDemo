@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+router.use(express.json())
 
 //导入路由处理模块
 const user_handler = require('../router-handler/user')

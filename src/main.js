@@ -8,6 +8,15 @@ import router from '../router'
 import store from '../store'
 import http from 'axios'
 import '../api/mock'
+import SocketIO from "vue-socket.io";
+import ClientSocketIO from 'socket.io-client'
+
+Vue.use(new SocketIO({
+  debug: true,
+  connection: ClientSocketIO.connect('http://localhost:3000/', {
+    transports: ['websocket']
+  })
+}))
 
 Vue.config.productionTip = false
 Vue.use(Element)
