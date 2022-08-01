@@ -64,7 +64,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.el-breadcrumb /deep/ .el-breadcrumb__inner {
+.el-breadcrumb :deep(.el-breadcrumb__inner)  {
   font-size: small;
   color: white ; 
 }

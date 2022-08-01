@@ -6,30 +6,32 @@ This is a personal **vue.js** + **node.js** experimental project, published as a
 
 ## Project setup
 ```
-yarn install
+npm install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+npm serve
 ```
 
 ### Compiles and minifies for production
 
 ```
-yarn build
+npm build
 ```
 
 ### Lints and fixes files
 
 ```
-yarn lint
+npm lint
 ```
 
 ### Localhost Server for development
 
 ```
-nodemon ./server/serve.js
+cd Server
+npm install
+nodemon ./serve.js
 ```
 
 ## Future
